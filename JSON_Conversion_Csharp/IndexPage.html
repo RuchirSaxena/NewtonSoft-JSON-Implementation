@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../../Scripts/jquery-3.1.1.min.js"></script>
+  
+</head>
+<body>
+    <input type="button" id="btnSendData" value="Send Json Data to server" />
+    <script>
+        $(document).ready(function () {
+            var UserDeatailsObject = [{
+                UserId: 1,
+                Username: "Ruchir Saxena",
+                Location: "Noida"
+            }];
+            var data = { jsonString: JSON.stringify(UserDeatailsObject) };
+            $("#btnSendData").on('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/GetJsonFromClient",
+                    data: data,
+                   // ContentType:text/html; charset=utf-8,
+                    sucess: function (data) {
+                        alert(data);
+                    },
+                    error: function (ex) {
+                        alert(ex);
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+﻿NewtonSoft JSON Serialize And Deserialize in C#
+
+By using newtonsoft json nuget package we can easily serialize and deserialize data based on our requirements.
+Following are the methods to serialize and deserialize data in asp.net
+
+
+
